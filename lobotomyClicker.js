@@ -915,7 +915,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "6";
+	app.meta.h["build"] = "8";
 	app.meta.h["company"] = "HaxeFlixel";
 	app.meta.h["file"] = "lobotomyClicker";
 	app.meta.h["name"] = "Lobotomy Clicker (By ricoanimations On Github)";
@@ -4823,7 +4823,17 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 	bg: null
 	,face: null
 	,shop: null
+	,shop2: null
+	,shop3: null
+	,shop4: null
+	,shop5: null
+	,shop6: null
 	,shopText: null
+	,shopText2: null
+	,shopText3: null
+	,shopText4: null
+	,shopText5: null
+	,shopText6: null
 	,lobotomies: null
 	,number: null
 	,numberMultiplier: null
@@ -4853,14 +4863,59 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		this.lobotomies.setFormat("Times New Roman",48);
 		this.add(this.lobotomies);
 		this.shop = new flixel_FlxSprite();
-		this.shop.makeGraphic(300,300,-16777216);
+		this.shop.makeGraphic(300,120,-16777216);
 		this.shop.set_alpha(0.5);
 		this.shop.set_x(980);
 		this.shop.set_y(0);
 		this.add(this.shop);
-		this.shopText = new flixel_text_FlxText(980,0,0,"2x multiplier\n15 lobotomies",48);
+		this.shop2 = new flixel_FlxSprite();
+		this.shop2.makeGraphic(300,120,-16777216);
+		this.shop2.set_alpha(0.5);
+		this.shop2.set_x(980);
+		this.shop2.set_y(120);
+		this.add(this.shop2);
+		this.shop3 = new flixel_FlxSprite();
+		this.shop3.makeGraphic(300,120,-16777216);
+		this.shop3.set_alpha(0.5);
+		this.shop3.set_x(980);
+		this.shop3.set_y(240);
+		this.add(this.shop3);
+		this.shop4 = new flixel_FlxSprite();
+		this.shop4.makeGraphic(300,120,-16777216);
+		this.shop4.set_alpha(0.5);
+		this.shop4.set_x(980);
+		this.shop4.set_y(360);
+		this.add(this.shop4);
+		this.shop5 = new flixel_FlxSprite();
+		this.shop5.makeGraphic(300,120,-16777216);
+		this.shop5.set_alpha(0.5);
+		this.shop5.set_x(980);
+		this.shop5.set_y(480);
+		this.add(this.shop5);
+		this.shop6 = new flixel_FlxSprite();
+		this.shop6.makeGraphic(300,120,-16777216);
+		this.shop6.set_alpha(0.5);
+		this.shop6.set_x(980);
+		this.shop6.set_y(600);
+		this.add(this.shop6);
+		this.shopText = new flixel_text_FlxText(980,0,0,"+1 multiplier\n15 lobotomies",48);
 		this.shopText.setFormat("Times New Roman",48);
 		this.add(this.shopText);
+		this.shopText2 = new flixel_text_FlxText(980,120,0,"+2 multiplier\n40 lobotomies",48);
+		this.shopText2.setFormat("Times New Roman",48);
+		this.add(this.shopText2);
+		this.shopText3 = new flixel_text_FlxText(980,240,0,"+3 multiplier\n70 lobotomies",48);
+		this.shopText3.setFormat("Times New Roman",48);
+		this.add(this.shopText3);
+		this.shopText4 = new flixel_text_FlxText(980,360,0,"+5 multiplier\n120 lobotomies",48);
+		this.shopText4.setFormat("Times New Roman",48);
+		this.add(this.shopText4);
+		this.shopText5 = new flixel_text_FlxText(980,480,0,"+8 multiplier\n200 lobotomies",48);
+		this.shopText5.setFormat("Times New Roman",48);
+		this.add(this.shopText5);
+		this.shopText6 = new flixel_text_FlxText(980,600,0,"+15 multiplier\n450 lobotomies",48);
+		this.shopText6.setFormat("Times New Roman",48);
+		this.add(this.shopText6);
 	}
 	,update: function(elapsed) {
 		flixel_FlxState.prototype.update.call(this,elapsed);
@@ -4899,11 +4954,26 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 				this.face.updateHitbox();
 			}
 		}
-		if(flixel_FlxG.mouse.overlaps(this.shop)) {
+		if(flixel_FlxG.mouse.overlaps(this.shop) || flixel_FlxG.mouse.overlaps(this.shop2) || flixel_FlxG.mouse.overlaps(this.shop3)) {
 			if(flixel_FlxG.mouse._leftButton.current == 2) {
-				if(this.number >= 15) {
-					this.number -= 15;
-					this.numberMultiplier += 1;
+				if(flixel_FlxG.mouse.overlaps(this.shop)) {
+					if(this.number >= 15) {
+						this.number -= 15;
+						this.numberMultiplier += 1;
+						this.shop.set_alpha(0.1);
+					}
+				} else if(flixel_FlxG.mouse.overlaps(this.shop2)) {
+					if(this.number >= 40) {
+						this.number -= 40;
+						this.numberMultiplier += 2;
+						this.shop2.set_alpha(0.1);
+					}
+				} else if(flixel_FlxG.mouse.overlaps(this.shop3)) {
+					if(this.number >= 70) {
+						this.number -= 70;
+						this.numberMultiplier += 3;
+						this.shop3.set_alpha(0.1);
+					}
 				}
 				this.remove(this.lobotomies);
 				this.lobotomies = new flixel_text_FlxText(0,100,0,"" + this.number + " lobotomies",48);
@@ -4958,10 +5028,92 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 					this.faceOverlap();
 					this.add(this.face);
 				}
-				this.shop.set_alpha(0.1);
 			}
 			if(flixel_FlxG.mouse._leftButton.current == -1) {
 				this.shop.set_alpha(0.5);
+				this.shop2.set_alpha(0.5);
+				this.shop3.set_alpha(0.5);
+			}
+		}
+		if(flixel_FlxG.mouse.overlaps(this.shop4) || flixel_FlxG.mouse.overlaps(this.shop5) || flixel_FlxG.mouse.overlaps(this.shop6)) {
+			if(flixel_FlxG.mouse._leftButton.current == 2) {
+				if(flixel_FlxG.mouse.overlaps(this.shop4)) {
+					if(this.number >= 120) {
+						this.number -= 120;
+						this.numberMultiplier += 5;
+						this.shop4.set_alpha(0.1);
+					}
+				} else if(flixel_FlxG.mouse.overlaps(this.shop5)) {
+					if(this.number >= 200) {
+						this.number -= 200;
+						this.numberMultiplier += 8;
+						this.shop5.set_alpha(0.1);
+					}
+				} else if(flixel_FlxG.mouse.overlaps(this.shop6)) {
+					if(this.number >= 450) {
+						this.number -= 450;
+						this.numberMultiplier += 15;
+						this.shop6.set_alpha(0.1);
+					}
+				}
+				this.remove(this.lobotomies);
+				this.lobotomies = new flixel_text_FlxText(0,100,0,"" + this.number + " lobotomies",48);
+				this.lobotomies.setFormat("Times New Roman",48);
+				this.add(this.lobotomies);
+				if(this.number < 15) {
+					this.remove(this.bg);
+					this.bg = new flixel_FlxSprite();
+					this.bg.makeGraphic(1280,720,-8355712);
+					this.add(this.bg);
+					this.remove(this.face);
+					this.face = new flixel_FlxSprite();
+					this.face.loadGraphic("assets/images/unrated.png");
+					var this1 = this.face.scale;
+					var x = 0.25;
+					var y = 0.25;
+					if(y == null) {
+						y = 0;
+					}
+					if(x == null) {
+						x = 0;
+					}
+					this1.set_x(x);
+					this1.set_y(y);
+					this.face.updateHitbox();
+					this.face.set_x(100);
+					this.face.set_y(100);
+					this.faceOverlap();
+					this.add(this.face);
+				} else if(this.number >= 15) {
+					this.remove(this.bg);
+					this.bg = new flixel_FlxSprite();
+					this.bg.makeGraphic(1280,720,-16384);
+					this.add(this.bg);
+					this.remove(this.face);
+					this.face = new flixel_FlxSprite();
+					this.face.loadGraphic("assets/images/auto.png");
+					var this1 = this.face.scale;
+					var x = 0.25;
+					var y = 0.25;
+					if(y == null) {
+						y = 0;
+					}
+					if(x == null) {
+						x = 0;
+					}
+					this1.set_x(x);
+					this1.set_y(y);
+					this.face.updateHitbox();
+					this.face.set_x(100);
+					this.face.set_y(100);
+					this.faceOverlap();
+					this.add(this.face);
+				}
+			}
+			if(flixel_FlxG.mouse._leftButton.current == -1) {
+				this.shop4.set_alpha(0.5);
+				this.shop5.set_alpha(0.5);
+				this.shop6.set_alpha(0.5);
 			}
 		}
 		if(this.number >= 15) {
@@ -74815,7 +74967,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 126907;
+	this.version = 4926;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
