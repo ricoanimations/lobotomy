@@ -915,7 +915,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "8";
+	app.meta.h["build"] = "9";
 	app.meta.h["company"] = "HaxeFlixel";
 	app.meta.h["file"] = "lobotomyClicker";
 	app.meta.h["name"] = "Lobotomy Clicker (By ricoanimations On Github)";
@@ -4812,6 +4812,18 @@ flixel_FlxState.prototype = $extend(flixel_group_FlxTypedGroup.prototype,{
 	,__properties__: $extend(flixel_group_FlxTypedGroup.prototype.__properties__,{get_subStateClosed:"get_subStateClosed",get_subStateOpened:"get_subStateOpened",set_bgColor:"set_bgColor",get_bgColor:"get_bgColor"})
 });
 var PlayState = function(MaxSize) {
+	this.shopNumberMultiplier6 = 15;
+	this.shopNumberMultiplier5 = 8;
+	this.shopNumberMultiplier4 = 5;
+	this.shopNumberMultiplier3 = 3;
+	this.shopNumberMultiplier2 = 2;
+	this.shopNumberMultiplier = 1;
+	this.shopNumber6 = 450;
+	this.shopNumber5 = 200;
+	this.shopNumber4 = 120;
+	this.shopNumber3 = 70;
+	this.shopNumber2 = 40;
+	this.shopNumber = 15;
 	this.numberMultiplier = 0;
 	this.number = 0;
 	flixel_FlxState.call(this,MaxSize);
@@ -4837,6 +4849,18 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 	,lobotomies: null
 	,number: null
 	,numberMultiplier: null
+	,shopNumber: null
+	,shopNumber2: null
+	,shopNumber3: null
+	,shopNumber4: null
+	,shopNumber5: null
+	,shopNumber6: null
+	,shopNumberMultiplier: null
+	,shopNumberMultiplier2: null
+	,shopNumberMultiplier3: null
+	,shopNumberMultiplier4: null
+	,shopNumberMultiplier5: null
+	,shopNumberMultiplier6: null
 	,create: function() {
 		flixel_FlxState.prototype.create.call(this);
 		this.bg = new flixel_FlxSprite();
@@ -4898,22 +4922,22 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		this.shop6.set_x(980);
 		this.shop6.set_y(600);
 		this.add(this.shop6);
-		this.shopText = new flixel_text_FlxText(980,0,0,"+1 multiplier\n15 lobotomies",48);
+		this.shopText = new flixel_text_FlxText(980,0,0,"+1 multiplier\n" + this.shopNumber + " lobotomies",48);
 		this.shopText.setFormat("Times New Roman",48);
 		this.add(this.shopText);
-		this.shopText2 = new flixel_text_FlxText(980,120,0,"+2 multiplier\n40 lobotomies",48);
+		this.shopText2 = new flixel_text_FlxText(980,120,0,"+2 multiplier\n" + this.shopNumber2 + " lobotomies",48);
 		this.shopText2.setFormat("Times New Roman",48);
 		this.add(this.shopText2);
-		this.shopText3 = new flixel_text_FlxText(980,240,0,"+3 multiplier\n70 lobotomies",48);
+		this.shopText3 = new flixel_text_FlxText(980,240,0,"+3 multiplier\n" + this.shopNumber3 + " lobotomies",48);
 		this.shopText3.setFormat("Times New Roman",48);
 		this.add(this.shopText3);
-		this.shopText4 = new flixel_text_FlxText(980,360,0,"+5 multiplier\n120 lobotomies",48);
+		this.shopText4 = new flixel_text_FlxText(980,360,0,"+5 multiplier\n" + this.shopNumber4 + " lobotomies",48);
 		this.shopText4.setFormat("Times New Roman",48);
 		this.add(this.shopText4);
-		this.shopText5 = new flixel_text_FlxText(980,480,0,"+8 multiplier\n200 lobotomies",48);
+		this.shopText5 = new flixel_text_FlxText(980,480,0,"+8 multiplier\n" + this.shopNumber5 + " lobotomies",48);
 		this.shopText5.setFormat("Times New Roman",48);
 		this.add(this.shopText5);
-		this.shopText6 = new flixel_text_FlxText(980,600,0,"+15 multiplier\n450 lobotomies",48);
+		this.shopText6 = new flixel_text_FlxText(980,600,0,"+15 multiplier\n" + this.shopNumber6 + " lobotomies",48);
 		this.shopText6.setFormat("Times New Roman",48);
 		this.add(this.shopText6);
 	}
@@ -4957,22 +4981,40 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		if(flixel_FlxG.mouse.overlaps(this.shop) || flixel_FlxG.mouse.overlaps(this.shop2) || flixel_FlxG.mouse.overlaps(this.shop3)) {
 			if(flixel_FlxG.mouse._leftButton.current == 2) {
 				if(flixel_FlxG.mouse.overlaps(this.shop)) {
-					if(this.number >= 15) {
-						this.number -= 15;
+					if(this.number >= this.shopNumber) {
+						this.number -= this.shopNumber;
 						this.numberMultiplier += 1;
+						this.shopNumberMultiplier += 1;
+						this.shopNumber += 1 + this.shopNumberMultiplier;
 						this.shop.set_alpha(0.1);
+						this.remove(this.shopText);
+						this.shopText = new flixel_text_FlxText(980,0,0,"+1 multiplier\n" + this.shopNumber + " lobotomies",48);
+						this.shopText.setFormat("Times New Roman",48);
+						this.add(this.shopText);
 					}
 				} else if(flixel_FlxG.mouse.overlaps(this.shop2)) {
-					if(this.number >= 40) {
-						this.number -= 40;
+					if(this.number >= this.shopNumber2) {
+						this.number -= this.shopNumber2;
 						this.numberMultiplier += 2;
+						this.shopNumberMultiplier2 += 2;
+						this.shopNumber2 += 2 + this.shopNumberMultiplier2;
 						this.shop2.set_alpha(0.1);
+						this.remove(this.shopText2);
+						this.shopText2 = new flixel_text_FlxText(980,120,0,"+2 multiplier\n" + this.shopNumber2 + " lobotomies",48);
+						this.shopText2.setFormat("Times New Roman",48);
+						this.add(this.shopText2);
 					}
 				} else if(flixel_FlxG.mouse.overlaps(this.shop3)) {
-					if(this.number >= 70) {
-						this.number -= 70;
+					if(this.number >= this.shopNumber3) {
+						this.number -= this.shopNumber3;
 						this.numberMultiplier += 3;
+						this.shopNumberMultiplier3 += 3;
+						this.shopNumber3 += 3 + this.shopNumberMultiplier3;
 						this.shop3.set_alpha(0.1);
+						this.remove(this.shopText3);
+						this.shopText3 = new flixel_text_FlxText(980,240,0,"+3 multiplier\n" + this.shopNumber3 + " lobotomies",48);
+						this.shopText3.setFormat("Times New Roman",48);
+						this.add(this.shopText3);
 					}
 				}
 				this.remove(this.lobotomies);
@@ -5038,22 +5080,40 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		if(flixel_FlxG.mouse.overlaps(this.shop4) || flixel_FlxG.mouse.overlaps(this.shop5) || flixel_FlxG.mouse.overlaps(this.shop6)) {
 			if(flixel_FlxG.mouse._leftButton.current == 2) {
 				if(flixel_FlxG.mouse.overlaps(this.shop4)) {
-					if(this.number >= 120) {
-						this.number -= 120;
+					if(this.number >= this.shopNumber4) {
+						this.number -= this.shopNumber4;
 						this.numberMultiplier += 5;
+						this.shopNumberMultiplier4 += 5;
+						this.shopNumber4 += 5 + this.shopNumberMultiplier4;
 						this.shop4.set_alpha(0.1);
+						this.remove(this.shopText4);
+						this.shopText4 = new flixel_text_FlxText(980,360,0,"+5 multiplier\n" + this.shopNumber4 + " lobotomies",48);
+						this.shopText4.setFormat("Times New Roman",48);
+						this.add(this.shopText4);
 					}
 				} else if(flixel_FlxG.mouse.overlaps(this.shop5)) {
-					if(this.number >= 200) {
-						this.number -= 200;
+					if(this.number >= this.shopNumber5) {
+						this.number -= this.shopNumber5;
 						this.numberMultiplier += 8;
+						this.shopNumberMultiplier5 += 8;
+						this.shopNumber5 += 8 + this.shopNumberMultiplier5;
 						this.shop5.set_alpha(0.1);
+						this.remove(this.shopText5);
+						this.shopText5 = new flixel_text_FlxText(980,480,0,"+8 multiplier\n" + this.shopNumber5 + " lobotomies",48);
+						this.shopText5.setFormat("Times New Roman",48);
+						this.add(this.shopText5);
 					}
 				} else if(flixel_FlxG.mouse.overlaps(this.shop6)) {
-					if(this.number >= 450) {
-						this.number -= 450;
+					if(this.number >= this.shopNumber6) {
+						this.number -= this.shopNumber6;
 						this.numberMultiplier += 15;
+						this.shopNumberMultiplier6 += 15;
+						this.shopNumber6 += 15 + this.shopNumberMultiplier6;
 						this.shop6.set_alpha(0.1);
+						this.remove(this.shopText6);
+						this.shopText6 = new flixel_text_FlxText(980,600,0,"+15 multiplier\n" + this.shopNumber6 + " lobotomies",48);
+						this.shopText6.setFormat("Times New Roman",48);
+						this.add(this.shopText6);
 					}
 				}
 				this.remove(this.lobotomies);
@@ -74967,7 +75027,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 932568;
+	this.version = 531059;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
