@@ -915,7 +915,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "9";
+	app.meta.h["build"] = "12";
 	app.meta.h["company"] = "HaxeFlixel";
 	app.meta.h["file"] = "lobotomyClicker";
 	app.meta.h["name"] = "Lobotomy Clicker (By ricoanimations On Github)";
@@ -3708,7 +3708,7 @@ ManifestResources.init = function(config) {
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$nokiafc22_$ttf);
 	openfl_text_Font.registerFont(_$_$ASSET_$_$OPENFL_$_$flixel_$fonts_$monsterrat_$ttf);
 	var bundle;
-	var data = "{\"name\":null,\"assets\":\"aoy4:pathy34:assets%2Fdata%2Fdata-goes-here.txty4:sizezy4:typey4:TEXTy2:idR1y7:preloadtgoR0y26:assets%2Fimages%2Fauto.pngR2i374492R3y5:IMAGER5R7R6tgoR0y26:assets%2Fimages%2Feasy.pngR2i307835R3R8R5R9R6tgoR0y36:assets%2Fimages%2Fimages-go-here.txtR2zR3R4R5R10R6tgoR0y29:assets%2Fimages%2Funrated.pngR2i118878R3R8R5R11R6tgoR0y27:assets%2Fimages%2Fwhat.webpR2i22302R3R8R5R12R6tgoR0y36:assets%2Fmusic%2Fmusic-goes-here.txtR2zR3R4R5R13R6tgoR0y36:assets%2Fsounds%2Fsounds-go-here.txtR2zR3R4R5R14R6tgoR2i8220R3y5:MUSICR5y26:flixel%2Fsounds%2Fbeep.mp3y9:pathGroupaR16y26:flixel%2Fsounds%2Fbeep.ogghR6tgoR2i39706R3R15R5y28:flixel%2Fsounds%2Fflixel.mp3R17aR19y28:flixel%2Fsounds%2Fflixel.ogghR6tgoR2i6840R3y5:SOUNDR5R18R17aR16R18hgoR2i33629R3R21R5R20R17aR19R20hgoR2i15744R3y4:FONTy9:classNamey35:__ASSET__flixel_fonts_nokiafc22_ttfR5y30:flixel%2Ffonts%2Fnokiafc22.ttfR6tgoR2i29724R3R22R23y36:__ASSET__flixel_fonts_monsterrat_ttfR5y31:flixel%2Ffonts%2Fmonsterrat.ttfR6tgoR0y33:flixel%2Fimages%2Fui%2Fbutton.pngR2i519R3R8R5R28R6tgoR0y36:flixel%2Fimages%2Flogo%2Fdefault.pngR2i3280R3R8R5R29R6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
+	var data = "{\"name\":null,\"assets\":\"aoy4:pathy34:assets%2Fdata%2Fdata-goes-here.txty4:sizezy4:typey4:TEXTy2:idR1y7:preloadtgoR0y26:assets%2Fimages%2Fauto.pngR2i374492R3y5:IMAGER5R7R6tgoR0y26:assets%2Fimages%2Feasy.pngR2i307835R3R8R5R9R6tgoR0y31:assets%2Fimages%2Feasydemon.pngR2i510214R3R8R5R10R6tgoR0y34:assets%2Fimages%2Fextremedemon.pngR2i436413R3R8R5R11R6tgoR0y26:assets%2Fimages%2Fhard.pngR2i241008R3R8R5R12R6tgoR0y31:assets%2Fimages%2Fharddemon.pngR2i365251R3R8R5R13R6tgoR0y28:assets%2Fimages%2Fharder.pngR2i283685R3R8R5R14R6tgoR0y36:assets%2Fimages%2Fimages-go-here.txtR2zR3R4R5R15R6tgoR0y28:assets%2Fimages%2Finsane.pngR2i363603R3R8R5R16R6tgoR0y33:assets%2Fimages%2Finsanedemon.pngR2i430510R3R8R5R17R6tgoR0y30:assets%2Fimages%2Flobotomy.pngR2i99975R3R8R5R18R6tgoR0y33:assets%2Fimages%2Fmediumdemon.pngR2i516211R3R8R5R19R6tgoR0y28:assets%2Fimages%2Fnormal.pngR2i275276R3R8R5R20R6tgoR0y36:assets%2Fimages%2Fumwhatthesigma.pngR2i8321R3R8R5R21R6tgoR0y29:assets%2Fimages%2Funrated.pngR2i118878R3R8R5R22R6tgoR0y27:assets%2Fimages%2Fwhat.webpR2i22302R3R8R5R23R6tgoR2i2364383R3y5:MUSICR5y32:assets%2Fmusic%2Fbackontrack.oggy9:pathGroupaR25hR6tgoR0y36:assets%2Fmusic%2Fmusic-goes-here.txtR2zR3R4R5R27R6tgoR2i1598285R3R24R5y31:assets%2Fmusic%2Fpolargeist.oggR26aR28hR6tgoR2i2900678R3R24R5y34:assets%2Fmusic%2Fstereomadness.oggR26aR29hR6tgoR2i25472R3y5:SOUNDR5y26:assets%2Fsounds%2Fauto.oggR26aR31hR6tgoR2i18184R3R30R5y26:assets%2Fsounds%2Feasy.oggR26aR32hR6tgoR2i18003R3R30R5y31:assets%2Fsounds%2Feasydemon.oggR26aR33hR6tgoR2i19250R3R30R5y34:assets%2Fsounds%2Fextremedemon.oggR26aR34hR6tgoR2i22301R3R30R5y26:assets%2Fsounds%2Fhard.oggR26aR35hR6tgoR2i23573R3R30R5y31:assets%2Fsounds%2Fharddemon.oggR26aR36hR6tgoR2i15279R3R30R5y28:assets%2Fsounds%2Fharder.oggR26aR37hR6tgoR2i23155R3R30R5y28:assets%2Fsounds%2Finsane.oggR26aR38hR6tgoR2i18219R3R30R5y33:assets%2Fsounds%2Finsanedemon.oggR26aR39hR6tgoR2i10862R3R30R5y33:assets%2Fsounds%2Fmediumdemon.oggR26aR40hR6tgoR2i24076R3R30R5y28:assets%2Fsounds%2Fnormal.oggR26aR41hR6tgoR0y36:assets%2Fsounds%2Fsounds-go-here.txtR2zR3R4R5R42R6tgoR2i28234R3R30R5y29:assets%2Fsounds%2Funrated.oggR26aR43hR6tgoR2i8220R3R24R5y26:flixel%2Fsounds%2Fbeep.mp3R26aR44y26:flixel%2Fsounds%2Fbeep.ogghR6tgoR2i39706R3R24R5y28:flixel%2Fsounds%2Fflixel.mp3R26aR46y28:flixel%2Fsounds%2Fflixel.ogghR6tgoR2i6840R3R30R5R45R26aR44R45hgoR2i33629R3R30R5R47R26aR46R47hgoR2i15744R3y4:FONTy9:classNamey35:__ASSET__flixel_fonts_nokiafc22_ttfR5y30:flixel%2Ffonts%2Fnokiafc22.ttfR6tgoR2i29724R3R48R49y36:__ASSET__flixel_fonts_monsterrat_ttfR5y31:flixel%2Ffonts%2Fmonsterrat.ttfR6tgoR0y33:flixel%2Fimages%2Fui%2Fbutton.pngR2i519R3R8R5R54R6tgoR0y36:flixel%2Fimages%2Flogo%2Fdefault.pngR2i3280R3R8R5R55R6tgh\",\"rootPath\":null,\"version\":2,\"libraryArgs\":[],\"libraryType\":null}";
 	var manifest = lime_utils_AssetManifest.parse(data,ManifestResources.rootPath);
 	var library = lime_utils_AssetLibrary.fromManifest(manifest);
 	lime_utils_Assets.registerLibrary("default",library);
@@ -4812,6 +4812,14 @@ flixel_FlxState.prototype = $extend(flixel_group_FlxTypedGroup.prototype,{
 	,__properties__: $extend(flixel_group_FlxTypedGroup.prototype.__properties__,{get_subStateClosed:"get_subStateClosed",get_subStateOpened:"get_subStateOpened",set_bgColor:"set_bgColor",get_bgColor:"get_bgColor"})
 });
 var PlayState = function(MaxSize) {
+	this.playSFX = true;
+	this.playMusic = true;
+	this.shopNumberShit6 = 15;
+	this.shopNumberShit5 = 8;
+	this.shopNumberShit4 = 5;
+	this.shopNumberShit3 = 3;
+	this.shopNumberShit2 = 2;
+	this.shopNumberShit = 1;
 	this.shopNumberMultiplier6 = 15;
 	this.shopNumberMultiplier5 = 8;
 	this.shopNumberMultiplier4 = 5;
@@ -4826,6 +4834,8 @@ var PlayState = function(MaxSize) {
 	this.shopNumber = 15;
 	this.numberMultiplier = 0;
 	this.number = 0;
+	this.rebirthMinimum = 50000;
+	this.rebirthNumber = 1;
 	flixel_FlxState.call(this,MaxSize);
 };
 $hxClasses["PlayState"] = PlayState;
@@ -4834,12 +4844,19 @@ PlayState.__super__ = flixel_FlxState;
 PlayState.prototype = $extend(flixel_FlxState.prototype,{
 	bg: null
 	,face: null
+	,rebirth: null
+	,rebirthText: null
+	,rebirthTextCurrent: null
+	,rebirthNumber: null
+	,rebirthMinimum: null
 	,shop: null
 	,shop2: null
 	,shop3: null
 	,shop4: null
 	,shop5: null
 	,shop6: null
+	,easteregg: null
+	,easteregg2: null
 	,shopText: null
 	,shopText2: null
 	,shopText3: null
@@ -4847,6 +4864,7 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 	,shopText5: null
 	,shopText6: null
 	,lobotomies: null
+	,multiplierText: null
 	,number: null
 	,numberMultiplier: null
 	,shopNumber: null
@@ -4861,10 +4879,24 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 	,shopNumberMultiplier4: null
 	,shopNumberMultiplier5: null
 	,shopNumberMultiplier6: null
+	,shopNumberShit: null
+	,shopNumberShit2: null
+	,shopNumberShit3: null
+	,shopNumberShit4: null
+	,shopNumberShit5: null
+	,shopNumberShit6: null
+	,playMusic: null
+	,playSFX: null
+	,music: null
+	,sfx: null
+	,musicText: null
+	,sfxText: null
+	,randomNumber: null
+	,whattheSFX: null
 	,create: function() {
 		flixel_FlxState.prototype.create.call(this);
 		this.bg = new flixel_FlxSprite();
-		this.bg.makeGraphic(1280,720,-8355712);
+		this.bg.makeGraphic(1280,720,-3618616);
 		this.add(this.bg);
 		this.face = new flixel_FlxSprite();
 		this.face.loadGraphic("assets/images/unrated.png");
@@ -4880,12 +4912,32 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		this1.set_x(x);
 		this1.set_y(y);
 		this.face.updateHitbox();
-		this.face.set_x(100);
-		this.face.set_y(100);
+		var _this = this.face;
+		if(17 == 1 || 17 == 17) {
+			_this.set_x((flixel_FlxG.width - _this.get_width()) / 2);
+		}
+		if(17 == 16 || 17 == 17) {
+			_this.set_y((flixel_FlxG.height - _this.get_height()) / 2);
+		}
 		this.add(this.face);
 		this.lobotomies = new flixel_text_FlxText(0,100,0,"" + this.number + " lobotomies",48);
 		this.lobotomies.setFormat("Times New Roman",48);
 		this.add(this.lobotomies);
+		this.multiplierText = new flixel_text_FlxText(400,0,0,"current multiplier: " + (this.numberMultiplier + 1),48);
+		this.multiplierText.setFormat("Times New Roman",48);
+		this.add(this.multiplierText);
+		this.rebirth = new flixel_FlxSprite();
+		this.rebirth.makeGraphic(500,120,-16777216);
+		this.rebirth.set_alpha(0.5);
+		this.rebirth.set_x(480);
+		this.rebirth.set_y(600);
+		this.add(this.rebirth);
+		this.rebirthText = new flixel_text_FlxText(480,600,0,"rebirth\n" + this.rebirthMinimum + " lobotomies",48);
+		this.rebirthText.setFormat("Times New Roman",48);
+		this.add(this.rebirthText);
+		this.rebirthTextCurrent = new flixel_text_FlxText(400,60,0,"current rebirths: " + (this.rebirthNumber - 1),48);
+		this.rebirthTextCurrent.setFormat("Times New Roman",48);
+		this.add(this.rebirthTextCurrent);
 		this.shop = new flixel_FlxSprite();
 		this.shop.makeGraphic(300,120,-16777216);
 		this.shop.set_alpha(0.5);
@@ -4922,24 +4974,43 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		this.shop6.set_x(980);
 		this.shop6.set_y(600);
 		this.add(this.shop6);
-		this.shopText = new flixel_text_FlxText(980,0,0,"+1 multiplier\n" + this.shopNumber + " lobotomies",48);
+		this.shopText = new flixel_text_FlxText(980,0,0,"+" + this.shopNumberShit + " multiplier\n" + this.shopNumber + " lobotomies",48);
 		this.shopText.setFormat("Times New Roman",48);
 		this.add(this.shopText);
-		this.shopText2 = new flixel_text_FlxText(980,120,0,"+2 multiplier\n" + this.shopNumber2 + " lobotomies",48);
+		this.shopText2 = new flixel_text_FlxText(980,120,0,"+" + this.shopNumberShit2 + " multiplier\n" + this.shopNumber2 + " lobotomies",48);
 		this.shopText2.setFormat("Times New Roman",48);
 		this.add(this.shopText2);
-		this.shopText3 = new flixel_text_FlxText(980,240,0,"+3 multiplier\n" + this.shopNumber3 + " lobotomies",48);
+		this.shopText3 = new flixel_text_FlxText(980,240,0,"+" + this.shopNumberShit3 + " multiplier\n" + this.shopNumber3 + " lobotomies",48);
 		this.shopText3.setFormat("Times New Roman",48);
 		this.add(this.shopText3);
-		this.shopText4 = new flixel_text_FlxText(980,360,0,"+5 multiplier\n" + this.shopNumber4 + " lobotomies",48);
+		this.shopText4 = new flixel_text_FlxText(980,360,0,"+" + this.shopNumberShit4 + " multiplier\n" + this.shopNumber4 + " lobotomies",48);
 		this.shopText4.setFormat("Times New Roman",48);
 		this.add(this.shopText4);
-		this.shopText5 = new flixel_text_FlxText(980,480,0,"+8 multiplier\n" + this.shopNumber5 + " lobotomies",48);
+		this.shopText5 = new flixel_text_FlxText(980,480,0,"+" + this.shopNumberShit5 + " multiplier\n" + this.shopNumber5 + " lobotomies",48);
 		this.shopText5.setFormat("Times New Roman",48);
 		this.add(this.shopText5);
-		this.shopText6 = new flixel_text_FlxText(980,600,0,"+15 multiplier\n" + this.shopNumber6 + " lobotomies",48);
+		this.shopText6 = new flixel_text_FlxText(980,600,0,"+" + this.shopNumberShit6 + " multiplier\n" + this.shopNumber6 + " lobotomies",48);
 		this.shopText6.setFormat("Times New Roman",48);
 		this.add(this.shopText6);
+		this.music = new flixel_FlxSprite();
+		this.music.makeGraphic(100,100,-16777216);
+		this.music.set_alpha(0.5);
+		this.music.set_x(0);
+		this.music.set_y(520);
+		this.add(this.music);
+		this.sfx = new flixel_FlxSprite();
+		this.sfx.makeGraphic(100,100,-16777216);
+		this.sfx.set_alpha(0.5);
+		this.sfx.set_x(0);
+		this.sfx.set_y(620);
+		this.add(this.sfx);
+		this.musicText = new flixel_text_FlxText(0,520,0,"mute\nmusic",24);
+		this.musicText.setFormat("Times New Roman",24);
+		this.add(this.musicText);
+		this.sfxText = new flixel_text_FlxText(0,620,0,"mute\nsfx",24);
+		this.sfxText.setFormat("Times New Roman",24);
+		this.add(this.sfxText);
+		this.playdaMusic();
 	}
 	,update: function(elapsed) {
 		flixel_FlxState.prototype.update.call(this,elapsed);
@@ -4957,7 +5028,10 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 				this1.set_x(x);
 				this1.set_y(y);
 				this.face.updateHitbox();
-				this.number += 1 + this.numberMultiplier;
+				this.number += (1 + this.numberMultiplier) * this.rebirthNumber;
+				if(this.playSFX == true) {
+					this.playdaSFX();
+				}
 				this.remove(this.lobotomies);
 				this.lobotomies = new flixel_text_FlxText(0,100,0,"" + this.number + " lobotomies",48);
 				this.lobotomies.setFormat("Times New Roman",48);
@@ -4978,98 +5052,169 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 				this.face.updateHitbox();
 			}
 		}
+		if(flixel_FlxG.mouse.overlaps(this.music)) {
+			if(this.playMusic == true && flixel_FlxG.mouse._leftButton.current == 2) {
+				this.music.set_alpha(0.1);
+				this.playMusic = false;
+				this.stopdaMusic();
+				this.remove(this.musicText);
+				this.musicText = new flixel_text_FlxText(0,520,0,"unmute\nmusic",24);
+				this.musicText.setFormat("Times New Roman",24);
+				this.add(this.musicText);
+			} else if(this.playMusic == false && flixel_FlxG.mouse._leftButton.current == 2) {
+				this.music.set_alpha(0.1);
+				this.playMusic = true;
+				this.playdaMusic();
+				this.remove(this.musicText);
+				this.musicText = new flixel_text_FlxText(0,520,0,"mute\nmusic",24);
+				this.musicText.setFormat("Times New Roman",24);
+				this.add(this.musicText);
+			}
+			if(flixel_FlxG.mouse._leftButton.current == -1) {
+				this.music.set_alpha(0.5);
+			}
+		}
+		if(flixel_FlxG.mouse.overlaps(this.sfx)) {
+			if(this.playSFX == true && flixel_FlxG.mouse._leftButton.current == 2) {
+				this.sfx.set_alpha(0.1);
+				this.playSFX = false;
+				this.stopdaSFX();
+				this.remove(this.sfxText);
+				this.sfxText = new flixel_text_FlxText(0,620,0,"unmute\nsfx",24);
+				this.sfxText.setFormat("Times New Roman",24);
+				this.add(this.sfxText);
+			} else if(this.playSFX == false && flixel_FlxG.mouse._leftButton.current == 2) {
+				this.sfx.set_alpha(0.1);
+				this.playSFX = true;
+				this.playdaSFX();
+				this.remove(this.sfxText);
+				this.sfxText = new flixel_text_FlxText(0,620,0,"mute\nsfx",24);
+				this.sfxText.setFormat("Times New Roman",24);
+				this.add(this.sfxText);
+			}
+			if(flixel_FlxG.mouse._leftButton.current == -1) {
+				this.sfx.set_alpha(0.5);
+			}
+		}
+		if(flixel_FlxG.mouse.overlaps(this.rebirth)) {
+			if(flixel_FlxG.mouse._leftButton.current == 2) {
+				if(this.number >= this.rebirthMinimum) {
+					this.number = 0;
+					this.numberMultiplier = 0;
+					this.rebirthNumber += 1;
+					this.rebirthMinimum *= 3;
+					this.shopNumberMultiplier *= this.rebirthNumber;
+					this.shopNumberMultiplier2 *= this.rebirthNumber;
+					this.shopNumberMultiplier3 *= this.rebirthNumber;
+					this.shopNumberMultiplier4 *= this.rebirthNumber;
+					this.shopNumberMultiplier5 *= this.rebirthNumber;
+					this.shopNumberMultiplier6 *= this.rebirthNumber;
+					this.shopNumberShit *= this.rebirthNumber;
+					this.shopNumberShit2 *= this.rebirthNumber;
+					this.shopNumberShit3 *= this.rebirthNumber;
+					this.shopNumberShit4 *= this.rebirthNumber;
+					this.shopNumberShit5 *= this.rebirthNumber;
+					this.shopNumberShit6 *= this.rebirthNumber;
+					this.shopNumber = 15;
+					this.shopNumber2 = 40;
+					this.shopNumber3 = 70;
+					this.shopNumber4 = 120;
+					this.shopNumber5 = 200;
+					this.shopNumber6 = 450;
+					this.remove(this.lobotomies);
+					this.lobotomies = new flixel_text_FlxText(0,100,0,"" + this.number + " lobotomies",48);
+					this.lobotomies.setFormat("Times New Roman",48);
+					this.add(this.lobotomies);
+					this.remove(this.rebirthText);
+					this.rebirthText = new flixel_text_FlxText(480,600,0,"rebirth\n" + this.rebirthMinimum + " lobotomies",48);
+					this.rebirthText.setFormat("Times New Roman",48);
+					this.add(this.rebirthText);
+					this.remove(this.rebirthTextCurrent);
+					this.rebirthTextCurrent = new flixel_text_FlxText(400,60,0,"current rebirths: " + (this.rebirthNumber - 1),48);
+					this.rebirthTextCurrent.setFormat("Times New Roman",48);
+					this.add(this.rebirthTextCurrent);
+					this.remove(this.multiplierText);
+					this.multiplierText = new flixel_text_FlxText(400,0,0,"current multiplier: " + (this.numberMultiplier + 1),48);
+					this.multiplierText.setFormat("Times New Roman",48);
+					this.add(this.multiplierText);
+					this.remove(this.shopText);
+					this.shopText = new flixel_text_FlxText(980,0,0,"+" + this.shopNumberShit + " multiplier\n" + this.shopNumber + " lobotomies",48);
+					this.shopText.setFormat("Times New Roman",48);
+					this.add(this.shopText);
+					this.remove(this.shopText2);
+					this.shopText2 = new flixel_text_FlxText(980,120,0,"+" + this.shopNumberShit2 + " multiplier\n" + this.shopNumber2 + " lobotomies",48);
+					this.shopText2.setFormat("Times New Roman",48);
+					this.add(this.shopText2);
+					this.remove(this.shopText3);
+					this.shopText3 = new flixel_text_FlxText(980,240,0,"+" + this.shopNumberShit3 + " multiplier\n" + this.shopNumber3 + " lobotomies",48);
+					this.shopText3.setFormat("Times New Roman",48);
+					this.add(this.shopText3);
+					this.remove(this.shopText4);
+					this.shopText4 = new flixel_text_FlxText(980,360,0,"+" + this.shopNumberShit4 + " multiplier\n" + this.shopNumber4 + " lobotomies",48);
+					this.shopText4.setFormat("Times New Roman",48);
+					this.add(this.shopText4);
+					this.remove(this.shopText5);
+					this.shopText5 = new flixel_text_FlxText(980,480,0,"+" + this.shopNumberShit5 + " multiplier\n" + this.shopNumber5 + " lobotomies",48);
+					this.shopText5.setFormat("Times New Roman",48);
+					this.add(this.shopText5);
+					this.remove(this.shopText6);
+					this.shopText6 = new flixel_text_FlxText(980,600,0,"+" + this.shopNumberShit6 + " multiplier\n" + this.shopNumber6 + " lobotomies",48);
+					this.shopText6.setFormat("Times New Roman",48);
+					this.add(this.shopText6);
+					this.rebirth.set_alpha(0.1);
+				}
+			}
+			if(flixel_FlxG.mouse._leftButton.current == -1) {
+				this.rebirth.set_alpha(0.5);
+			}
+		}
 		if(flixel_FlxG.mouse.overlaps(this.shop) || flixel_FlxG.mouse.overlaps(this.shop2) || flixel_FlxG.mouse.overlaps(this.shop3)) {
 			if(flixel_FlxG.mouse._leftButton.current == 2) {
 				if(flixel_FlxG.mouse.overlaps(this.shop)) {
 					if(this.number >= this.shopNumber) {
 						this.number -= this.shopNumber;
-						this.numberMultiplier += 1;
-						this.shopNumberMultiplier += 1;
+						this.numberMultiplier += this.shopNumberShit;
+						this.shopNumberMultiplier += this.shopNumberShit;
 						this.shopNumber += 1 + this.shopNumberMultiplier;
 						this.shop.set_alpha(0.1);
 						this.remove(this.shopText);
-						this.shopText = new flixel_text_FlxText(980,0,0,"+1 multiplier\n" + this.shopNumber + " lobotomies",48);
+						this.shopText = new flixel_text_FlxText(980,0,0,"+" + this.shopNumberShit + " multiplier\n" + this.shopNumber + " lobotomies",48);
 						this.shopText.setFormat("Times New Roman",48);
 						this.add(this.shopText);
+						this.updateMultiplier();
 					}
 				} else if(flixel_FlxG.mouse.overlaps(this.shop2)) {
 					if(this.number >= this.shopNumber2) {
 						this.number -= this.shopNumber2;
-						this.numberMultiplier += 2;
-						this.shopNumberMultiplier2 += 2;
+						this.numberMultiplier += this.shopNumberShit2;
+						this.shopNumberMultiplier2 += this.shopNumberShit2;
 						this.shopNumber2 += 2 + this.shopNumberMultiplier2;
 						this.shop2.set_alpha(0.1);
 						this.remove(this.shopText2);
-						this.shopText2 = new flixel_text_FlxText(980,120,0,"+2 multiplier\n" + this.shopNumber2 + " lobotomies",48);
+						this.shopText2 = new flixel_text_FlxText(980,120,0,"+" + this.shopNumberShit2 + " multiplier\n" + this.shopNumber2 + " lobotomies",48);
 						this.shopText2.setFormat("Times New Roman",48);
 						this.add(this.shopText2);
+						this.updateMultiplier();
 					}
 				} else if(flixel_FlxG.mouse.overlaps(this.shop3)) {
 					if(this.number >= this.shopNumber3) {
 						this.number -= this.shopNumber3;
-						this.numberMultiplier += 3;
-						this.shopNumberMultiplier3 += 3;
+						this.numberMultiplier += this.shopNumberShit3;
+						this.shopNumberMultiplier3 += this.shopNumberShit3;
 						this.shopNumber3 += 3 + this.shopNumberMultiplier3;
 						this.shop3.set_alpha(0.1);
 						this.remove(this.shopText3);
-						this.shopText3 = new flixel_text_FlxText(980,240,0,"+3 multiplier\n" + this.shopNumber3 + " lobotomies",48);
+						this.shopText3 = new flixel_text_FlxText(980,240,0,"+" + this.shopNumberShit3 + " multiplier\n" + this.shopNumber3 + " lobotomies",48);
 						this.shopText3.setFormat("Times New Roman",48);
 						this.add(this.shopText3);
+						this.updateMultiplier();
 					}
 				}
 				this.remove(this.lobotomies);
 				this.lobotomies = new flixel_text_FlxText(0,100,0,"" + this.number + " lobotomies",48);
 				this.lobotomies.setFormat("Times New Roman",48);
 				this.add(this.lobotomies);
-				if(this.number < 15) {
-					this.remove(this.bg);
-					this.bg = new flixel_FlxSprite();
-					this.bg.makeGraphic(1280,720,-8355712);
-					this.add(this.bg);
-					this.remove(this.face);
-					this.face = new flixel_FlxSprite();
-					this.face.loadGraphic("assets/images/unrated.png");
-					var this1 = this.face.scale;
-					var x = 0.25;
-					var y = 0.25;
-					if(y == null) {
-						y = 0;
-					}
-					if(x == null) {
-						x = 0;
-					}
-					this1.set_x(x);
-					this1.set_y(y);
-					this.face.updateHitbox();
-					this.face.set_x(100);
-					this.face.set_y(100);
-					this.faceOverlap();
-					this.add(this.face);
-				} else if(this.number >= 15) {
-					this.remove(this.bg);
-					this.bg = new flixel_FlxSprite();
-					this.bg.makeGraphic(1280,720,-16384);
-					this.add(this.bg);
-					this.remove(this.face);
-					this.face = new flixel_FlxSprite();
-					this.face.loadGraphic("assets/images/auto.png");
-					var this1 = this.face.scale;
-					var x = 0.25;
-					var y = 0.25;
-					if(y == null) {
-						y = 0;
-					}
-					if(x == null) {
-						x = 0;
-					}
-					this1.set_x(x);
-					this1.set_y(y);
-					this.face.updateHitbox();
-					this.face.set_x(100);
-					this.face.set_y(100);
-					this.faceOverlap();
-					this.add(this.face);
-				}
+				this.faceChange();
 			}
 			if(flixel_FlxG.mouse._leftButton.current == -1) {
 				this.shop.set_alpha(0.5);
@@ -5082,93 +5227,48 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 				if(flixel_FlxG.mouse.overlaps(this.shop4)) {
 					if(this.number >= this.shopNumber4) {
 						this.number -= this.shopNumber4;
-						this.numberMultiplier += 5;
-						this.shopNumberMultiplier4 += 5;
+						this.numberMultiplier += this.shopNumberShit4;
+						this.shopNumberMultiplier4 += this.shopNumberShit4;
 						this.shopNumber4 += 5 + this.shopNumberMultiplier4;
 						this.shop4.set_alpha(0.1);
 						this.remove(this.shopText4);
-						this.shopText4 = new flixel_text_FlxText(980,360,0,"+5 multiplier\n" + this.shopNumber4 + " lobotomies",48);
+						this.shopText4 = new flixel_text_FlxText(980,360,0,"+" + this.shopNumberShit4 + " multiplier\n" + this.shopNumber4 + " lobotomies",48);
 						this.shopText4.setFormat("Times New Roman",48);
 						this.add(this.shopText4);
+						this.updateMultiplier();
 					}
 				} else if(flixel_FlxG.mouse.overlaps(this.shop5)) {
 					if(this.number >= this.shopNumber5) {
 						this.number -= this.shopNumber5;
-						this.numberMultiplier += 8;
-						this.shopNumberMultiplier5 += 8;
+						this.numberMultiplier += this.shopNumberShit5;
+						this.shopNumberMultiplier5 += this.shopNumberShit5;
 						this.shopNumber5 += 8 + this.shopNumberMultiplier5;
 						this.shop5.set_alpha(0.1);
 						this.remove(this.shopText5);
-						this.shopText5 = new flixel_text_FlxText(980,480,0,"+8 multiplier\n" + this.shopNumber5 + " lobotomies",48);
+						this.shopText5 = new flixel_text_FlxText(980,480,0,"+" + this.shopNumberShit5 + " multiplier\n" + this.shopNumber5 + " lobotomies",48);
 						this.shopText5.setFormat("Times New Roman",48);
 						this.add(this.shopText5);
+						this.updateMultiplier();
 					}
 				} else if(flixel_FlxG.mouse.overlaps(this.shop6)) {
 					if(this.number >= this.shopNumber6) {
 						this.number -= this.shopNumber6;
-						this.numberMultiplier += 15;
-						this.shopNumberMultiplier6 += 15;
+						this.numberMultiplier += this.shopNumberShit6;
+						this.shopNumberMultiplier6 += this.shopNumberShit6;
 						this.shopNumber6 += 15 + this.shopNumberMultiplier6;
 						this.shop6.set_alpha(0.1);
 						this.remove(this.shopText6);
-						this.shopText6 = new flixel_text_FlxText(980,600,0,"+15 multiplier\n" + this.shopNumber6 + " lobotomies",48);
+						this.shopText6 = new flixel_text_FlxText(980,600,0,"+" + this.shopNumberShit6 + " multiplier\n" + this.shopNumber6 + " lobotomies",48);
 						this.shopText6.setFormat("Times New Roman",48);
 						this.add(this.shopText6);
+						this.updateMultiplier();
 					}
 				}
 				this.remove(this.lobotomies);
 				this.lobotomies = new flixel_text_FlxText(0,100,0,"" + this.number + " lobotomies",48);
 				this.lobotomies.setFormat("Times New Roman",48);
 				this.add(this.lobotomies);
-				if(this.number < 15) {
-					this.remove(this.bg);
-					this.bg = new flixel_FlxSprite();
-					this.bg.makeGraphic(1280,720,-8355712);
-					this.add(this.bg);
-					this.remove(this.face);
-					this.face = new flixel_FlxSprite();
-					this.face.loadGraphic("assets/images/unrated.png");
-					var this1 = this.face.scale;
-					var x = 0.25;
-					var y = 0.25;
-					if(y == null) {
-						y = 0;
-					}
-					if(x == null) {
-						x = 0;
-					}
-					this1.set_x(x);
-					this1.set_y(y);
-					this.face.updateHitbox();
-					this.face.set_x(100);
-					this.face.set_y(100);
-					this.faceOverlap();
-					this.add(this.face);
-				} else if(this.number >= 15) {
-					this.remove(this.bg);
-					this.bg = new flixel_FlxSprite();
-					this.bg.makeGraphic(1280,720,-16384);
-					this.add(this.bg);
-					this.remove(this.face);
-					this.face = new flixel_FlxSprite();
-					this.face.loadGraphic("assets/images/auto.png");
-					var this1 = this.face.scale;
-					var x = 0.25;
-					var y = 0.25;
-					if(y == null) {
-						y = 0;
-					}
-					if(x == null) {
-						x = 0;
-					}
-					this1.set_x(x);
-					this1.set_y(y);
-					this.face.updateHitbox();
-					this.face.set_x(100);
-					this.face.set_y(100);
-					this.faceOverlap();
-					this.add(this.face);
-				}
+				this.faceChange();
 			}
 			if(flixel_FlxG.mouse._leftButton.current == -1) {
 				this.shop4.set_alpha(0.5);
@@ -5176,55 +5276,77 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 				this.shop6.set_alpha(0.5);
 			}
 		}
-		if(this.number >= 15) {
-			this.remove(this.bg);
-			this.bg = new flixel_FlxSprite();
-			this.bg.makeGraphic(1280,720,-16384);
-			this.add(this.bg);
-			this.remove(this.face);
-			this.face = new flixel_FlxSprite();
-			this.face.loadGraphic("assets/images/auto.png");
-			var this1 = this.face.scale;
-			var x = 0.25;
-			var y = 0.25;
-			if(y == null) {
-				y = 0;
+		this.faceChange();
+		if(this.number == 69) {
+			var _this = flixel_FlxG.keys.pressed;
+			if(_this.keyManager.checkStatusUnsafe(65,_this.status)) {
+				this.remove(this.bg);
+				this.remove(this.face);
+				this.remove(this.lobotomies);
+				this.remove(this.rebirth);
+				this.remove(this.rebirthText);
+				this.remove(this.shop);
+				this.remove(this.shop2);
+				this.remove(this.shop3);
+				this.remove(this.shop4);
+				this.remove(this.shop5);
+				this.remove(this.shop6);
+				this.remove(this.shopText);
+				this.remove(this.shopText2);
+				this.remove(this.shopText3);
+				this.remove(this.shopText4);
+				this.remove(this.shopText5);
+				this.remove(this.shopText6);
+				this.remove(this.multiplierText);
+				this.easteregg = new flixel_FlxSprite();
+				this.easteregg.loadGraphic("assets/images/lobotomy.png");
+				var _this = this.easteregg;
+				if(17 == 1 || 17 == 17) {
+					_this.set_x((flixel_FlxG.width - _this.get_width()) / 2);
+				}
+				if(17 == 16 || 17 == 17) {
+					_this.set_y((flixel_FlxG.height - _this.get_height()) / 2);
+				}
+				this.add(this.easteregg);
 			}
-			if(x == null) {
-				x = 0;
+		} else {
+			var tmp;
+			if(this.number == 841) {
+				var _this = flixel_FlxG.keys.pressed;
+				tmp = _this.keyManager.checkStatusUnsafe(75,_this.status);
+			} else {
+				tmp = false;
 			}
-			this1.set_x(x);
-			this1.set_y(y);
-			this.face.updateHitbox();
-			this.face.set_x(100);
-			this.face.set_y(100);
-			this.faceOverlap();
-			this.add(this.face);
-		}
-		if(this.number >= 50) {
-			this.remove(this.bg);
-			this.bg = new flixel_FlxSprite();
-			this.bg.makeGraphic(1280,720,-16776961);
-			this.add(this.bg);
-			this.remove(this.face);
-			this.face = new flixel_FlxSprite();
-			this.face.loadGraphic("assets/images/easy.png");
-			var this1 = this.face.scale;
-			var x = 0.25;
-			var y = 0.25;
-			if(y == null) {
-				y = 0;
+			if(tmp) {
+				this.remove(this.bg);
+				this.remove(this.face);
+				this.remove(this.lobotomies);
+				this.remove(this.rebirth);
+				this.remove(this.rebirthText);
+				this.remove(this.shop);
+				this.remove(this.shop2);
+				this.remove(this.shop3);
+				this.remove(this.shop4);
+				this.remove(this.shop5);
+				this.remove(this.shop6);
+				this.remove(this.shopText);
+				this.remove(this.shopText2);
+				this.remove(this.shopText3);
+				this.remove(this.shopText4);
+				this.remove(this.shopText5);
+				this.remove(this.shopText6);
+				this.remove(this.multiplierText);
+				this.easteregg2 = new flixel_FlxSprite();
+				this.easteregg2.loadGraphic("assets/images/umwhatthesigma.png");
+				var _this = this.easteregg2;
+				if(17 == 1 || 17 == 17) {
+					_this.set_x((flixel_FlxG.width - _this.get_width()) / 2);
+				}
+				if(17 == 16 || 17 == 17) {
+					_this.set_y((flixel_FlxG.height - _this.get_height()) / 2);
+				}
+				this.add(this.easteregg2);
 			}
-			if(x == null) {
-				x = 0;
-			}
-			this1.set_x(x);
-			this1.set_y(y);
-			this.face.updateHitbox();
-			this.face.set_x(100);
-			this.face.set_y(100);
-			this.faceOverlap();
-			this.add(this.face);
 		}
 	}
 	,faceOverlap: function() {
@@ -5257,6 +5379,146 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 				this.face.updateHitbox();
 			}
 		}
+	}
+	,updateMultiplier: function() {
+		this.remove(this.multiplierText);
+		this.multiplierText = new flixel_text_FlxText(400,0,0,"current multiplier: " + (this.numberMultiplier + 1),48);
+		this.multiplierText.setFormat("Times New Roman",48);
+		this.add(this.multiplierText);
+	}
+	,faceChange: function() {
+		this.remove(this.bg);
+		this.bg = new flixel_FlxSprite();
+		if(this.number < 15) {
+			this.bg.makeGraphic(1280,720,-3618616);
+		} else if(this.number >= 15 && this.number < 50) {
+			this.bg.makeGraphic(1280,720,-995232);
+		} else if(this.number >= 50 && this.number < 150) {
+			this.bg.makeGraphic(1280,720,-16731905);
+		} else if(this.number >= 150 && this.number < 500) {
+			this.bg.makeGraphic(1280,720,-16711936);
+		} else if(this.number >= 500 && this.number < 2500) {
+			this.bg.makeGraphic(1280,720,-12288);
+		} else if(this.number >= 2500 && this.number < 15000) {
+			this.bg.makeGraphic(1280,720,-40960);
+		} else if(this.number >= 15000 && this.number < 100000) {
+			this.bg.makeGraphic(1280,720,-36640);
+		} else if(this.number >= 100000 && this.number < 1000000) {
+			this.bg.makeGraphic(1280,720,-6668033);
+		} else if(this.number >= 1000000 && this.number < 2500000) {
+			this.bg.makeGraphic(1280,720,-2084662);
+		} else if(this.number >= 2500000 && this.number < 5000000) {
+			this.bg.makeGraphic(1280,720,-53152);
+		} else if(this.number >= 5000000 && this.number < 10000000) {
+			this.bg.makeGraphic(1280,720,-57312);
+		} else if(this.number >= 10000000) {
+			this.bg.makeGraphic(1280,720,-4194304);
+		}
+		this.add(this.bg);
+		this.remove(this.face);
+		this.face = new flixel_FlxSprite();
+		if(this.number < 15) {
+			this.face.loadGraphic("assets/images/unrated.png");
+		} else if(this.number >= 15 && this.number < 50) {
+			this.face.loadGraphic("assets/images/auto.png");
+		} else if(this.number >= 50 && this.number < 150) {
+			this.face.loadGraphic("assets/images/easy.png");
+		} else if(this.number >= 150 && this.number < 500) {
+			this.face.loadGraphic("assets/images/normal.png");
+		} else if(this.number >= 500 && this.number < 2500) {
+			this.face.loadGraphic("assets/images/hard.png");
+		} else if(this.number >= 2500 && this.number < 15000) {
+			this.face.loadGraphic("assets/images/harder.png");
+		} else if(this.number >= 15000 && this.number < 100000) {
+			this.face.loadGraphic("assets/images/insane.png");
+		} else if(this.number >= 100000 && this.number < 1000000) {
+			this.face.loadGraphic("assets/images/easydemon.png");
+		} else if(this.number >= 1000000 && this.number < 2500000) {
+			this.face.loadGraphic("assets/images/mediumdemon.png");
+		} else if(this.number >= 2500000 && this.number < 5000000) {
+			this.face.loadGraphic("assets/images/harddemon.png");
+		} else if(this.number >= 5000000 && this.number < 10000000) {
+			this.face.loadGraphic("assets/images/insanedemon.png");
+		} else if(this.number >= 10000000) {
+			this.face.loadGraphic("assets/images/extremedemon.png");
+		}
+		var this1 = this.face.scale;
+		var x = 0.25;
+		var y = 0.25;
+		if(y == null) {
+			y = 0;
+		}
+		if(x == null) {
+			x = 0;
+		}
+		this1.set_x(x);
+		this1.set_y(y);
+		this.face.updateHitbox();
+		var _this = this.face;
+		if(17 == 1 || 17 == 17) {
+			_this.set_x((flixel_FlxG.width - _this.get_width()) / 2);
+		}
+		if(17 == 16 || 17 == 17) {
+			_this.set_y((flixel_FlxG.height - _this.get_height()) / 2);
+		}
+		this.faceOverlap();
+		this.add(this.face);
+	}
+	,playdaMusic: function() {
+		this.randomNumber = flixel_FlxG.random.int(0,2);
+		switch(this.randomNumber) {
+		case 0:
+			if(flixel_FlxG.sound.music == null) {
+				flixel_FlxG.sound.playMusic("assets/music/stereomadness.ogg",1,true);
+			}
+			break;
+		case 1:
+			if(flixel_FlxG.sound.music == null) {
+				flixel_FlxG.sound.playMusic("assets/music/backontrack.ogg",1,true);
+			}
+			break;
+		case 2:
+			if(flixel_FlxG.sound.music == null) {
+				flixel_FlxG.sound.playMusic("assets/music/polargeist.ogg",1,true);
+			}
+			break;
+		}
+		flixel_FlxG.sound.music.set_volume(1);
+	}
+	,stopdaMusic: function() {
+		flixel_FlxG.sound.music.set_volume(0);
+	}
+	,playdaSFX: function() {
+		if(this.number < 15) {
+			this.whattheSFX = flixel_FlxG.sound.load("assets/sounds/unrated.ogg");
+		} else if(this.number >= 15 && this.number < 50) {
+			this.whattheSFX = flixel_FlxG.sound.load("assets/sounds/auto.ogg");
+		} else if(this.number >= 50 && this.number < 150) {
+			this.whattheSFX = flixel_FlxG.sound.load("assets/sounds/easy.ogg");
+		} else if(this.number >= 150 && this.number < 500) {
+			this.whattheSFX = flixel_FlxG.sound.load("assets/sounds/normal.ogg");
+		} else if(this.number >= 500 && this.number < 2500) {
+			this.whattheSFX = flixel_FlxG.sound.load("assets/sounds/hard.ogg");
+		} else if(this.number >= 2500 && this.number < 15000) {
+			this.whattheSFX = flixel_FlxG.sound.load("assets/sounds/harder.ogg");
+		} else if(this.number >= 15000 && this.number < 100000) {
+			this.whattheSFX = flixel_FlxG.sound.load("assets/sounds/insane.ogg");
+		} else if(this.number >= 100000 && this.number < 1000000) {
+			this.whattheSFX = flixel_FlxG.sound.load("assets/sounds/easydemon.ogg");
+		} else if(this.number >= 1000000 && this.number < 2500000) {
+			this.whattheSFX = flixel_FlxG.sound.load("assets/sounds/mediumdemon.ogg");
+		} else if(this.number >= 2500000 && this.number < 5000000) {
+			this.whattheSFX = flixel_FlxG.sound.load("assets/sounds/harddemon.ogg");
+		} else if(this.number >= 5000000 && this.number < 10000000) {
+			this.whattheSFX = flixel_FlxG.sound.load("assets/sounds/insanedemon.ogg");
+		} else if(this.number >= 10000000) {
+			this.whattheSFX = flixel_FlxG.sound.load("assets/sounds/extremedemon.ogg");
+		}
+		this.whattheSFX.play();
+		this.whattheSFX.set_volume(1);
+	}
+	,stopdaSFX: function() {
+		this.whattheSFX.set_volume(0);
 	}
 	,__class__: PlayState
 });
@@ -75027,7 +75289,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 531059;
+	this.version = 368543;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
