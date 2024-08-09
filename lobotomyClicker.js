@@ -915,7 +915,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "14";
+	app.meta.h["build"] = "18";
 	app.meta.h["company"] = "HaxeFlixel";
 	app.meta.h["file"] = "lobotomyClicker";
 	app.meta.h["name"] = "Lobotomy Clicker (By ricoanimations On Github)";
@@ -4812,10 +4812,10 @@ flixel_FlxState.prototype = $extend(flixel_group_FlxTypedGroup.prototype,{
 	,__properties__: $extend(flixel_group_FlxTypedGroup.prototype.__properties__,{get_subStateClosed:"get_subStateClosed",get_subStateOpened:"get_subStateOpened",set_bgColor:"set_bgColor",get_bgColor:"get_bgColor"})
 });
 var PlayState = function(MaxSize) {
-	this.rebirthMultiply = 1;
 	this.playSFX = true;
 	this.playMusic = true;
 	this.restarts = 0;
+	this.rebirthMultiply = 1;
 	this.shopNumberShit6 = 15;
 	this.shopNumberShit5 = 8;
 	this.shopNumberShit4 = 5;
@@ -4836,6 +4836,8 @@ var PlayState = function(MaxSize) {
 	this.shopNumber = 15;
 	this.numberMultiplier = 0;
 	this.number = 0;
+	this.updateVersion = "Beta 3.6";
+	this.name = "";
 	this.rebirthMinimum = 50000;
 	this.rebirthNumber = 1;
 	flixel_FlxState.call(this,MaxSize);
@@ -4869,6 +4871,10 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 	,lobotomies: null
 	,multiplierText: null
 	,coverText: null
+	,procedures: null
+	,versionText: null
+	,name: null
+	,updateVersion: null
 	,number: null
 	,numberMultiplier: null
 	,shopNumber: null
@@ -4889,6 +4895,7 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 	,shopNumberShit4: null
 	,shopNumberShit5: null
 	,shopNumberShit6: null
+	,rebirthMultiply: null
 	,restarts: null
 	,playMusic: null
 	,playSFX: null
@@ -4897,8 +4904,8 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 	,musicText: null
 	,sfxText: null
 	,randomNumber: null
+	,nameGenerator: null
 	,whattheSFX: null
-	,rebirthMultiply: null
 	,create: function() {
 		flixel_FlxState.prototype.create.call(this);
 		this.bg = new flixel_FlxSprite();
@@ -4926,9 +4933,12 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 			_this.set_y((flixel_FlxG.height - _this.get_height()) / 2);
 		}
 		this.add(this.face);
-		this.lobotomies = new flixel_text_FlxText(0,100,0,"" + this.number + " lobotomies",48);
+		this.lobotomies = new flixel_text_FlxText(0,150,0,"" + this.number + " lobotomies",48);
 		this.lobotomies.setFormat("Times New Roman",48);
 		this.add(this.lobotomies);
+		this.procedures = new flixel_text_FlxText(0,100,0,this.name + "'s procedures",48);
+		this.procedures.setFormat("Times New Roman",48);
+		this.add(this.procedures);
 		this.multiplierText = new flixel_text_FlxText(400,0,0,"current multiplier: " + (this.numberMultiplier + 1),48);
 		this.multiplierText.setFormat("Times New Roman",48);
 		this.add(this.multiplierText);
@@ -5017,6 +5027,12 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		this.sfxText.setFormat("Times New Roman",24);
 		this.add(this.sfxText);
 		this.playdaMusic();
+		if(!flixel_FlxG.save.data.customName) {
+			this.generateNames();
+		}
+		this.versionText = new flixel_text_FlxText(100,690,0,"Version of Game: " + this.updateVersion,24);
+		this.versionText.setFormat("Times New Roman",24);
+		this.add(this.versionText);
 	}
 	,update: function(elapsed) {
 		flixel_FlxState.prototype.update.call(this,elapsed);
@@ -5033,13 +5049,20 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 				}
 				this1.set_x(x);
 				this1.set_y(y);
+				var _this = this.face;
+				if(17 == 1 || 17 == 17) {
+					_this.set_x((flixel_FlxG.width - _this.get_width()) / 2);
+				}
+				if(17 == 16 || 17 == 17) {
+					_this.set_y((flixel_FlxG.height - _this.get_height()) / 2);
+				}
 				this.face.updateHitbox();
 				this.number += (1 + this.numberMultiplier) * this.rebirthNumber;
 				if(this.playSFX == true) {
 					this.playdaSFX();
 				}
 				this.remove(this.lobotomies);
-				this.lobotomies = new flixel_text_FlxText(0,100,0,"" + this.number + " lobotomies",48);
+				this.lobotomies = new flixel_text_FlxText(0,150,0,"" + this.number + " lobotomies",48);
 				this.lobotomies.setFormat("Times New Roman",48);
 				this.add(this.lobotomies);
 			}
@@ -5055,6 +5078,13 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 				}
 				this1.set_x(x);
 				this1.set_y(y);
+				var _this = this.face;
+				if(17 == 1 || 17 == 17) {
+					_this.set_x((flixel_FlxG.width - _this.get_width()) / 2);
+				}
+				if(17 == 16 || 17 == 17) {
+					_this.set_y((flixel_FlxG.height - _this.get_height()) / 2);
+				}
 				this.face.updateHitbox();
 			}
 		}
@@ -5123,7 +5153,7 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 					this.shopNumberShit5 *= 2;
 					this.shopNumberShit6 *= 2;
 					this.remove(this.lobotomies);
-					this.lobotomies = new flixel_text_FlxText(0,100,0,"" + this.number + " lobotomies",48);
+					this.lobotomies = new flixel_text_FlxText(0,150,0,"" + this.number + " lobotomies",48);
 					this.lobotomies.setFormat("Times New Roman",48);
 					this.add(this.lobotomies);
 					this.remove(this.rebirthText);
@@ -5209,7 +5239,7 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 					}
 				}
 				this.remove(this.lobotomies);
-				this.lobotomies = new flixel_text_FlxText(0,100,0,"" + this.number + " lobotomies",48);
+				this.lobotomies = new flixel_text_FlxText(0,150,0,"" + this.number + " lobotomies",48);
 				this.lobotomies.setFormat("Times New Roman",48);
 				this.add(this.lobotomies);
 				this.faceChange();
@@ -5260,7 +5290,7 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 					}
 				}
 				this.remove(this.lobotomies);
-				this.lobotomies = new flixel_text_FlxText(0,100,0,"" + this.number + " lobotomies",48);
+				this.lobotomies = new flixel_text_FlxText(0,150,0,"" + this.number + " lobotomies",48);
 				this.lobotomies.setFormat("Times New Roman",48);
 				this.add(this.lobotomies);
 				this.faceChange();
@@ -5358,6 +5388,13 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 				}
 				this1.set_x(x);
 				this1.set_y(y);
+				var _this = this.face;
+				if(17 == 1 || 17 == 17) {
+					_this.set_x((flixel_FlxG.width - _this.get_width()) / 2);
+				}
+				if(17 == 16 || 17 == 17) {
+					_this.set_y((flixel_FlxG.height - _this.get_height()) / 2);
+				}
 				this.face.updateHitbox();
 			} else if(flixel_FlxG.mouse._leftButton.current == -1) {
 				var this1 = this.face.scale;
@@ -5371,6 +5408,13 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 				}
 				this1.set_x(x);
 				this1.set_y(y);
+				var _this = this.face;
+				if(17 == 1 || 17 == 17) {
+					_this.set_x((flixel_FlxG.width - _this.get_width()) / 2);
+				}
+				if(17 == 16 || 17 == 17) {
+					_this.set_y((flixel_FlxG.height - _this.get_height()) / 2);
+				}
 				this.face.updateHitbox();
 			}
 		}
@@ -5381,9 +5425,7 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		this.multiplierText.setFormat("Times New Roman",48);
 		this.add(this.multiplierText);
 	}
-	,faceChange: function() {
-		this.remove(this.bg);
-		this.bg = new flixel_FlxSprite();
+	,changeDaBG: function() {
 		if(this.number < 15) {
 			this.bg.makeGraphic(1280,720,-3618616);
 		} else if(this.number >= 15 && this.number < 50) {
@@ -5409,9 +5451,8 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		} else if(this.number >= 10000000) {
 			this.bg.makeGraphic(1280,720,-4194304);
 		}
-		this.add(this.bg);
-		this.remove(this.face);
-		this.face = new flixel_FlxSprite();
+	}
+	,changeDaFaces: function() {
 		if(this.number < 15) {
 			this.face.loadGraphic("assets/images/unrated.png");
 		} else if(this.number >= 15 && this.number < 50) {
@@ -5437,6 +5478,15 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 		} else if(this.number >= 10000000) {
 			this.face.loadGraphic("assets/images/extremedemon.png");
 		}
+	}
+	,faceChange: function() {
+		this.remove(this.bg);
+		this.bg = new flixel_FlxSprite();
+		this.changeDaBG();
+		this.add(this.bg);
+		this.remove(this.face);
+		this.face = new flixel_FlxSprite();
+		this.changeDaFaces();
 		var this1 = this.face.scale;
 		var x = 0.25;
 		var y = 0.25;
@@ -5514,6 +5564,63 @@ PlayState.prototype = $extend(flixel_FlxState.prototype,{
 	}
 	,stopdaSFX: function() {
 		this.whattheSFX.set_volume(0);
+	}
+	,generateNames: function() {
+		this.nameGenerator = flixel_FlxG.random.int(0,15);
+		switch(this.nameGenerator) {
+		case 0:
+			this.name = "Lobotomy Enjoyer";
+			break;
+		case 1:
+			this.name = "KnightRy";
+			break;
+		case 2:
+			this.name = "Counting";
+			break;
+		case 3:
+			this.name = "Drizzy Drake";
+			break;
+		case 4:
+			this.name = "Max Design Pro";
+			break;
+		case 5:
+			this.name = "Nugget";
+			break;
+		case 6:
+			this.name = "Cookie";
+			break;
+		case 7:
+			this.name = "Rico";
+			break;
+		case 8:
+			this.name = "Tatsu";
+			break;
+		case 9:
+			this.name = "Diddy";
+			break;
+		case 10:
+			this.name = "Carl";
+			break;
+		case 11:
+			this.name = "GoAwayMonday";
+			break;
+		case 12:
+			this.name = "PopTartGuy";
+			break;
+		case 13:
+			this.name = "Dyno";
+			break;
+		case 14:
+			this.name = "MrBeast";
+			break;
+		case 15:
+			this.name = "Liam";
+			break;
+		}
+		this.remove(this.procedures);
+		this.procedures = new flixel_text_FlxText(0,100,0,this.name + "'s procedures",48);
+		this.procedures.setFormat("Times New Roman",48);
+		this.add(this.procedures);
 	}
 	,__class__: PlayState
 });
@@ -75284,7 +75391,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 967766;
+	this.version = 849631;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
